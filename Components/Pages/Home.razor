@@ -1,0 +1,25 @@
+﻿@page "/"
+@rendermode InteractiveServer
+<PageTitle>Home</PageTitle>
+
+<h1>Welcome to Student Info App</h1>
+<p>Today is: @DateTime.Now.ToShortDateString()</p>
+<p>This is my first Blazor application built with Visual Studio 2026.</p>
+
+<p>@message</p>
+
+<button class="btn btn-success mb-3" @onclick="ShowMessage">Show Welcome Message</button>
+
+<StudentCard Name="Alice Tan" Course="Computer Science" Level="Year 2" />
+<StudentCard Name="John Lee" Course="Software Engineering" Level="Year 3" />
+<StudentCard Name="Siti Aminah" Course="Information Technology" Level="Year 1" />
+
+@code {
+    private string message = "Click the button to display a message.";
+
+    private void ShowMessage()
+    {
+        message = "Welcome to Blazor development with Visual Studio 2026!";
+    }
+}
+

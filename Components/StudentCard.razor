@@ -1,0 +1,17 @@
+﻿<div class="student-card">
+    <h3>@Name</h3>
+    <p><strong>Course:</strong> @Course</p>
+    <p><strong>Level:</strong> @Level</p>
+</div>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "";
+
+    [Parameter]
+    public string Course { get; set; } = "";
+
+    [Parameter]
+    public string Level { get; set; } = "";
+}
+
