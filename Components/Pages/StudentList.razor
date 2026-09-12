@@ -1,0 +1,16 @@
+﻿<h3>@Title</h3>
+
+<ul>
+    @foreach (var student in Students)
+    {
+        <li>@student</li>
+    }
+</ul>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "";
+
+    [Parameter]
+    public List<string> Students { get; set; } = new();
+}

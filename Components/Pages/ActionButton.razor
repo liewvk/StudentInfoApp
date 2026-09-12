@@ -1,0 +1,11 @@
+﻿<button class="action-button" @onclick="OnClick">@Label</button>
+
+@code {
+    [Parameter]
+    public string Label { get; set; } = "Click";
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+}
+
+

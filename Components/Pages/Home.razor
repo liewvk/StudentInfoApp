@@ -4,11 +4,59 @@
 
 <h1>Welcome to Student Info App</h1>
 <p>Today is: @DateTime.Now.ToShortDateString()</p>
-<p>This is my first Blazor application built with Visual Studio 2026.</p>
+
+
+<MessageBox Text="Welcome to the student portal." />
+<MessageBox Text="Your registration has been completed." />
+<MessageBox Text="Please review your profile details." />
+<AlertBox Title="Success" Message="Your data has been saved." />
+<AlertBox Title="Notice" Message="Classes will begin next Monday." />
+<AlertBox Title="Success" Message="Your profile was updated." AlertType="success" />
+<AlertBox Title="Warning" Message="Your session will expire soon." AlertType="warning" />
+<AlertBox Title="Error" Message="Unable to load data." AlertType="error" />
+<InfoCard Title="Blazor Components" Description="Learn how to build interactive UI with Razor components." />
+<InfoCard Title="Routing" Description="Understand how page navigation works in Blazor." />
+<InfoCard Title="Forms" Description="Build forms with validation and data binding." />
+<ActionButton Label="Save" />
+<ActionButton Label="Submit" />
+<ActionButton Label="Register" />
+<SectionHeader Title="Featured Courses" Subtitle="Explore our latest learning modules." />
+<SectionHeader Title="Student Services" Subtitle="Get help with registration and academic support." />
+
+<PanelBox>
+    <h3>Important Notice</h3>
+    <p>This content is placed inside the reusable panel component.</p>
+</PanelBox>
 
 <p>@message</p>
 
 <button class="btn btn-success mb-3" @onclick="ShowMessage">Show Welcome Message</button>
+<ActionButton Label="Show Message" OnClick="DisplayMessage" />
+
+@code {
+    private string message = "No message yet.";
+
+    private void DisplayMessage()
+    {
+        message = "You clicked the reusable button.";
+    }
+
+    private void ShowMessage()
+    {
+        message = "Welcome to Blazor development with Visual Studio 2026!";
+    }
+}
+<StudentList Title="Registered Students" Students="studentNames" />
+
+@code {
+    private List<string> studentNames = new()
+    {
+        "Alice Tan",
+        "John Lee",
+        "Siti Aminah"
+    };
+}
+
 
 <StudentCard Name="Alice Tan" Course="Computer Science" Level="Year 2" />
 <StudentCard Name="John Lee" Course="Software Engineering" Level="Year 3" />
@@ -16,13 +64,4 @@
 <AnnouncementBox Title="Class Update"
                  Content="The Blazor workshop will begin at 10:00 AM."
                  PostedDate="@DateTime.Today" />
-
-@code {
-    private string message = "Click the button to display a message.";
-
-    private void ShowMessage()
-    {
-        message = "Welcome to Blazor development with Visual Studio 2026!";
-    }
-}
 
