@@ -1,0 +1,17 @@
+﻿<div class="announcement-box">
+    <h4>@Title</h4>
+    <p>@Content</p>
+    <small>Posted on: @PostedDate.ToShortDateString()</small>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "";
+
+    [Parameter]
+    public string Content { get; set; } = "";
+
+    [Parameter]
+    public DateTime PostedDate { get; set; }
+}
+
